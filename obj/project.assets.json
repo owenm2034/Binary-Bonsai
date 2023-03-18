@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/owen/.nuget/packages/": {}
+    "/Users/owenm/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/owen/Repos/Binary-Bonsai/Binary-Bonsai.csproj",
+      "projectUniqueName": "/Users/owenm/Documents/GitHub/Binary-Bonsai/Binary-Bonsai.csproj",
       "projectName": "Binary-Bonsai",
-      "projectPath": "/home/owen/Repos/Binary-Bonsai/Binary-Bonsai.csproj",
-      "packagesPath": "/home/owen/.nuget/packages/",
-      "outputPath": "/home/owen/Repos/Binary-Bonsai/obj/",
+      "projectPath": "/Users/owenm/Documents/GitHub/Binary-Bonsai/Binary-Bonsai.csproj",
+      "packagesPath": "/Users/owenm/.nuget/packages/",
+      "outputPath": "/Users/owenm/Documents/GitHub/Binary-Bonsai/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/owen/.nuget/NuGet/NuGet.Config"
+        "/Users/owenm/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/owen/.dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }
