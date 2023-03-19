@@ -5,7 +5,7 @@ using Tree;
 namespace TreesController
 {
     [ApiController]
-    [Route("tree")]
+    [Route("trees")]
     public class BonsaiTreeController : ControllerBase
     {
 
