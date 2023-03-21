@@ -1,4 +1,4 @@
-namespace Tree
+namespace BonsaiTrees
 {
     public class BonsaiTree
     {

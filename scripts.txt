@@ -1,0 +1,1 @@
+dotnet aspnet-codegenerator controller -name BonsaiTreesController -async -api -m BonsaiTree -dc BonsaiTreeContext -outDir Controllers

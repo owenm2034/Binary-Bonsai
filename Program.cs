@@ -1,4 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MoistureSensorRecord>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MoistureSensorRecord") ?? throw new InvalidOperationException("Connection string 'MoistureSensorRecord' not found.")));
+builder.Services.AddDbContext<BonsaiTreeContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BonsaiTreeContext") ?? throw new InvalidOperationException("Connection string 'BonsaiTreeContext' not found.")));
 
 // Add services to the container.
 
