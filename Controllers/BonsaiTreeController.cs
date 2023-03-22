@@ -11,16 +11,16 @@ namespace Binary_Bonsai.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BonsaiTreesController : ControllerBase
+    public class BonsaiTreeController : ControllerBase
     {
         private readonly BonsaiTreeContext _context;
 
-        public BonsaiTreesController(BonsaiTreeContext context)
+        public BonsaiTreeController(BonsaiTreeContext context)
         {
             _context = context;
         }
 
-        // GET: api/BonsaiTrees
+        // GET: api/BonsaiTree
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BonsaiTree>>> GetBonsaiTree()
         {
@@ -31,7 +31,7 @@ namespace Binary_Bonsai.Controllers
             return await _context.BonsaiTree.ToListAsync();
         }
 
-        // GET: api/BonsaiTrees/5
+        // GET: api/BonsaiTree/5
         [HttpGet("{id}")]
         public async Task<ActionResult<BonsaiTree>> GetBonsaiTree(Guid id)
         {
@@ -49,7 +49,7 @@ namespace Binary_Bonsai.Controllers
             return bonsaiTree;
         }
 
-        // PUT: api/BonsaiTrees/5
+        // PUT: api/BonsaiTree/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBonsaiTree(Guid id, BonsaiTree bonsaiTree)
@@ -80,7 +80,7 @@ namespace Binary_Bonsai.Controllers
             return NoContent();
         }
 
-        // POST: api/BonsaiTrees
+        // POST: api/BonsaiTree
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<BonsaiTree>> PostBonsaiTree(BonsaiTree bonsaiTree)
@@ -95,7 +95,7 @@ namespace Binary_Bonsai.Controllers
             return CreatedAtAction("GetBonsaiTree", new { id = bonsaiTree.Id }, bonsaiTree);
         }
 
-        // DELETE: api/BonsaiTrees/5
+        // DELETE: api/BonsaiTree/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBonsaiTree(Guid id)
         {
