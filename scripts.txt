@@ -1,2 +1,2 @@
 #generate a new controller
-dotnet aspnet-codegenerator controller -name BonsaiTreesController -async -api -m BonsaiTree -dc BonsaiTreeContext -outDir Controllers
+dotnet aspnet-codegenerator controller -name BonsaiTreesController -async -api -m BonsaiTree -dc BonsaiTreeContext -outDir Controllers --useSqlite -f

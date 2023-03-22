@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BonsaiTrees;
+using Models.BonsaiTrees;
 
 namespace Binary_Bonsai.Controllers
 {
@@ -13,9 +13,9 @@ namespace Binary_Bonsai.Controllers
     [ApiController]
     public class BonsaiTreeController : ControllerBase
     {
-        private readonly BonsaiTreeContext _context;
+        private readonly BonsaiTreeRecord _context;
 
-        public BonsaiTreeController(BonsaiTreeContext context)
+        public BonsaiTreeController(BonsaiTreeRecord context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace Binary_Bonsai.Controllers
           {
               return NotFound();
           }
-            return await _context.BonsaiTree.ToListAsync();
+            return await _context.Find()
         }
 
         // GET: api/BonsaiTree/5

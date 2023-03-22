@@ -1,4 +1,4 @@
-namespace BonsaiTrees
+namespace Models.BonsaiTrees
 {
     public class BonsaiTree
     {
