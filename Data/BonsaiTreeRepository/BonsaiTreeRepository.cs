@@ -5,15 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using DatabaseContexts;
 
-public class BonsaiTreeRepository
+public class BonsaiTreeRepository : DatabaseContext
 {
-    public IDatabaseContext _abstractRepository;
-
-    public BonsaiTreeRepository()
+    public BonsaiTreeRepository(string dbName)
     {
-
+        db = new SqliteConnection(dbName);
     }
-
-    public DbSet<Models.BonsaiTrees.BonsaiTree> BonsaiTree { get; set; } = default!;
 }

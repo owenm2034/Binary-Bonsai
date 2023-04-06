@@ -2,5 +2,5 @@ using Microsoft.Data.Sqlite;
 
 public interface IDatabaseContext
 {
-    public SqliteConnection _abstractRepository {get; set;}
+    public SqliteConnection db { get; set; }
 }
