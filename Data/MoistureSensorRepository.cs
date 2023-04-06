@@ -12,6 +12,7 @@ public class MoistureSensorRepository : DbContext
     public MoistureSensorRepository (DbContextOptions<BonsaiTreeRepository> options)
             : base(options)
         {
+            var var = new SqliteConnection("Data Source=hello.db");
         }
 
         public DbSet<Models.BonsaiTrees.BonsaiTree> BonsaiTree { get; set; } = default!;

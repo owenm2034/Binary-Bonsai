@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
-public class BonsaiTreeRepository : DbContext
+public class BonsaiTreeRepository
 {
-    public BonsaiTreeRepository(DbContextOptions<BonsaiTreeRepository> options)
-        : base(options)
+    public IDatabaseContext _abstractRepository;
+
+    public BonsaiTreeRepository()
     {
-        using (var connection = new SqliteConnection("Data Source=hello.db")) { }
+
     }
 
     public DbSet<Models.BonsaiTrees.BonsaiTree> BonsaiTree { get; set; } = default!;

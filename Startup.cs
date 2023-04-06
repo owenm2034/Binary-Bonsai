@@ -20,6 +20,7 @@ public class Startup
         
         // Add your services here
         // services.AddScoped<IMyService, MyService>();
+        services.AddSingleton<IGenericService<MyClass>, GenericService<MyClass>>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
