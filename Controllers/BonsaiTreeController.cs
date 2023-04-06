@@ -13,33 +13,29 @@ namespace Binary_Bonsai.Controllers
     [ApiController]
     public class BonsaiTreeController : ControllerBase
     {
-        private readonly BonsaiTreeRecord _context;
+        private readonly BonsaiTreeRepository _repo;
 
-        public BonsaiTreeController(BonsaiTreeRecord context)
+        public BonsaiTreeController(BonsaiTreeRepository context)
         {
-            _context = context;
+            _repo = context;
         }
 
         // GET: api/BonsaiTree
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BonsaiTree>>> GetBonsaiTree()
+        public Task<ActionResult<IEnumerable<BonsaiTree>>> GetBonsaiTree()
         {
-          if (_context.BonsaiTree == null)
-          {
-              return NotFound();
-          }
-            return await _context.Find()
+            throw new NotImplementedException();
         }
 
         // GET: api/BonsaiTree/5
         [HttpGet("{id}")]
         public async Task<ActionResult<BonsaiTree>> GetBonsaiTree(Guid id)
         {
-          if (_context.BonsaiTree == null)
+          if (_repo.BonsaiTree == null)
           {
               return NotFound();
           }
-            var bonsaiTree = await _context.BonsaiTree.FindAsync(id);
+            var bonsaiTree = await _repo.BonsaiTree.FindAsync(id);
 
             if (bonsaiTree == null)
             {
@@ -59,11 +55,11 @@ namespace Binary_Bonsai.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(bonsaiTree).State = EntityState.Modified;
+            _repo.Entry(bonsaiTree).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _repo.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -85,12 +81,12 @@ namespace Binary_Bonsai.Controllers
         [HttpPost]
         public async Task<ActionResult<BonsaiTree>> PostBonsaiTree(BonsaiTree bonsaiTree)
         {
-          if (_context.BonsaiTree == null)
+          if (_repo.BonsaiTree == null)
           {
               return Problem("Entity set 'BonsaiTreeContext.BonsaiTree'  is null.");
           }
-            _context.BonsaiTree.Add(bonsaiTree);
-            await _context.SaveChangesAsync();
+            _repo.BonsaiTree.Add(bonsaiTree);
+            await _repo.SaveChangesAsync();
 
             return CreatedAtAction("GetBonsaiTree", new { id = bonsaiTree.Id }, bonsaiTree);
         }
@@ -99,25 +95,25 @@ namespace Binary_Bonsai.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBonsaiTree(Guid id)
         {
-            if (_context.BonsaiTree == null)
+            if (_repo.BonsaiTree == null)
             {
                 return NotFound();
             }
-            var bonsaiTree = await _context.BonsaiTree.FindAsync(id);
+            var bonsaiTree = await _repo.BonsaiTree.FindAsync(id);
             if (bonsaiTree == null)
             {
                 return NotFound();
             }
 
-            _context.BonsaiTree.Remove(bonsaiTree);
-            await _context.SaveChangesAsync();
+            _repo.BonsaiTree.Remove(bonsaiTree);
+            await _repo.SaveChangesAsync();
 
             return NoContent();
         }
 
         private bool BonsaiTreeExists(Guid id)
         {
-            return (_context.BonsaiTree?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_repo.BonsaiTree?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
